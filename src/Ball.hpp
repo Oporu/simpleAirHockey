@@ -1,7 +1,7 @@
 #ifndef BALL_HPP
 #define BALL_HPP 
 #include <SFML/Graphics.hpp>
-#include <cmath>
+#include <math.h>
 #include <iostream>
 
 class Ball {
