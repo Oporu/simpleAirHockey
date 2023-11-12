@@ -3,7 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include "Ball.hpp"
 #include "Disc.hpp"
-
+#include <chrono>
+#include <thread>
 int main() {
 	sf::RenderWindow window{ { 800u, 600u }, "simpleAirHockey", sf::Style::Close };
 	const sf::Color backGroundColor{sf::Color::Black};
@@ -45,12 +46,14 @@ int main() {
 							ball.velocity.x += 30.f;
 							break;
 						case sf::Keyboard::Space:
-							ball.velocity.x *= 2;
-							ball.velocity.y *= 2;
+							ball.velocity *= 2.f;
 							break;
 						case sf::Keyboard::Num0:
 							ball.velocity.x = 0;
 							ball.velocity.y = 0;
+							break;
+						case sf::Keyboard::Backspace:
+							std::this_thread::sleep_for(std::chrono::seconds(1));
 							break;
 						default:;
 					}

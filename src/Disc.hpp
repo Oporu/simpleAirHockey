@@ -14,8 +14,8 @@ Disc::Disc() {
 }
 void Disc::update(const sf::WindowBase& windowBase) {
 	// const sf::Vector2f lastPosition = this->shape.getPosition();
-	const sf::Vector2i cursorPosition = sf::Mouse::getPosition(windowBase);
-	const float radius = this->shape.getRadius();
+	const sf::Vector2i& cursorPosition = sf::Mouse::getPosition(windowBase);
+	const float& radius = this->shape.getRadius();
 	this->shape.setPosition(cursorPosition.x - radius, cursorPosition.y - radius);
 	// sf::Vector2f deltaPosition = this->shape.getPosition() - lastPosition;
 }
