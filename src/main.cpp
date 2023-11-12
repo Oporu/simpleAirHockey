@@ -52,8 +52,10 @@ int main() {
 							ball.velocity.x = 0;
 							ball.velocity.y = 0;
 							break;
+						default:;
 					}
 					break;
+				default:;
 			}
 		}
 
