@@ -39,7 +39,7 @@ void Ball::update(const sf::RenderWindow& window) {
 	const sf::FloatRect box = this->shape.getLocalBounds();
 	const sf::Vector2u windowSize = window.getSize();
 	const sf::Vector2f previousPosition = this->getPosition();
-	sf::Vector2f position{previousPosition};
+	sf::Vector2f position = previousPosition;
 	
 	this->velocity *= 0.985f;
 	position += this->velocity;
