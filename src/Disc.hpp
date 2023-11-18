@@ -3,13 +3,14 @@
 #include <SFML/Graphics.hpp>
 class Disc {
 public:
-	Disc();
-	sf::CircleShape shape{30.f};
+	Disc(float radius=30.0f, sf::Color color=sf::Color::Green);
+	sf::CircleShape shape;
 	void update(const sf::WindowBase& windowBase);
 	void render(sf::RenderWindow& window) const;
 };
-Disc::Disc() {
-	this->shape.setFillColor(sf::Color::Green);
+Disc::Disc(const float radius, const sf::Color color) {
+	this->shape.setRadius(radius);
+	this->shape.setFillColor(color);
 }
 void Disc::update(const sf::WindowBase& windowBase) {
 	const sf::Vector2i& cursorPosition = sf::Mouse::getPosition(windowBase);
