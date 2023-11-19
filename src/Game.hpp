@@ -11,7 +11,8 @@
 class Game {
     sf::RenderWindow window{ { 800u, 600u }, "simpleAirHockey", sf::Style::Close };
     Ball ball;
-	Disc disc;
+	Disc disc{ 30.0f, sf::Color::Green, window};
+    sf::Clock clock;
     void initializeWindow();
     void handleWindowEvents();
 public:
@@ -23,6 +24,7 @@ public:
 
 Game::Game() {
 	this->initializeWindow();
+    clock.restart();
     return;
 }
 void Game::initializeWindow() {
@@ -81,7 +83,11 @@ void Game::handleWindowEvents() {
 }
 void Game::update() {
     this->handleWindowEvents();
-    this->ball.update(window);
+
+    const sf::Time elapsed = clock.restart();
+    elapsed.asSeconds();
+    
+    this->ball.update(window, disc);
     this->disc.update(window);
 }
 void Game::render() {
