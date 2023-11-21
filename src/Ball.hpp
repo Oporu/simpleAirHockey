@@ -108,8 +108,8 @@ void Ball::update(const sf::RenderWindow& window, const Disc& disc) {
 			remainingMovement.y = edge.y - position.y;
 			position.y = edge.y;
 			float move_x = remainingMovement.x * _1.y;
-            position.x = previousPosition.x + move_x;
-            remainingMovement.x -= move_x;
+			position.x = previousPosition.x + move_x;
+			remainingMovement.x -= move_x;
 		} else { // actually hits corner but this is very hard
 			this->velocity *= -1.0f;
 			remainingMovement = edge - position;
@@ -132,7 +132,7 @@ inline float Ball::getRadius() const {
 	return this->shape.getRadius();
 }
 inline float Ball::getSpeed() const {
-    return std::sqrt(this->velocity.x * this->velocity.x + this->velocity.y * this->velocity.y);
+	return std::sqrt(this->velocity.x * this->velocity.x + this->velocity.y * this->velocity.y);
 }
 inline bool Ball::isMoving() const {
 	return this->velocity.x != 0.0f || this->velocity.y != 0.0f;

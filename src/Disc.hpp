@@ -33,7 +33,7 @@ Disc::Disc(const sf::WindowBase& windowBase) {
 	this->shape.setPosition(cursorPosition.x - 30.0f, cursorPosition.y - 30.0f);
 }
 void Disc::update(const sf::WindowBase& windowBase) {
-    const sf::Vector2f previousPosition = this->shape.getPosition();
+	const sf::Vector2f previousPosition = this->shape.getPosition();
 	const sf::Vector2i& cursorPosition = sf::Mouse::getPosition(windowBase);
 	const float& radius = this->shape.getRadius();
 	this->shape.setPosition(cursorPosition.x - radius, cursorPosition.y - radius);
@@ -51,16 +51,16 @@ void Disc::render(sf::RenderWindow& window) {
 	this->trails.clear();
 }
 inline const sf::Vector2f& Disc::getVelocity() const {
-    return this->velocity;
+	return this->velocity;
 }
 inline float Disc::getSpeed() const {
-    return std::sqrt(this->velocity.x * this->velocity.x + this->velocity.y * this->velocity.y);
+	return std::sqrt(this->velocity.x * this->velocity.x + this->velocity.y * this->velocity.y);
 }
 inline const sf::Vector2f& Disc::getPosition() const {
-    return this->shape.getPosition();
+	return this->shape.getPosition();
 }
 inline float Disc::getRadius() const {
-    return this->shape.getRadius();
+	return this->shape.getRadius();
 }
 inline bool Disc::isMoving() const {
 	return this->velocity.x != 0.0f || this->velocity.y != 0.0f;
