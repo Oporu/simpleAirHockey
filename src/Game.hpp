@@ -25,7 +25,6 @@ public:
 Game::Game() {
 	this->initializeWindow();
 	clock.restart();
-	return;
 }
 void Game::initializeWindow() {
 	window.setFramerateLimit(60);
@@ -44,34 +43,35 @@ void Game::handleWindowEvents() {
 				break;
 			case sf::Event::KeyPressed:
 				switch (event.key.code) {
-					case sf::Keyboard::Q:
-					case sf::Keyboard::Escape:
+					using sf::Keyboard;
+					case Keyboard::Q:
+					case Keyboard::Escape:
 						window.close();
 						break;
-					case sf::Keyboard::Up:
-					case sf::Keyboard::W:
+					case Keyboard::Up:
+					case Keyboard::W:
 						ball.velocity.y -= 30.f;
 						break;
-					case sf::Keyboard::Down:
-					case sf::Keyboard::S:
+					case Keyboard::Down:
+					case Keyboard::S:
 						ball.velocity.y += 30.f;
 						break;
-					case sf::Keyboard::Left:
-					case sf::Keyboard::A:
+					case Keyboard::Left:
+					case Keyboard::A:
 						ball.velocity.x -= 30.f;
 						break;
-					case sf::Keyboard::Right:
-					case sf::Keyboard::D:
+					case Keyboard::Right:
+					case Keyboard::D:
 						ball.velocity.x += 30.f;
 						break;
-					case sf::Keyboard::Space:
+					case Keyboard::Space:
 						ball.velocity *= 2.f;
 						break;
-					case sf::Keyboard::Num0:
+					case Keyboard::Num0:
 						ball.velocity.x = 0;
 						ball.velocity.y = 0;
 						break;
-					case sf::Keyboard::Backspace:
+					case Keyboard::Backspace:
 						std::this_thread::sleep_for(std::chrono::seconds(1));
 						break;
 					default:;
