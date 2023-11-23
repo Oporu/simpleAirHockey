@@ -155,7 +155,7 @@ inline bool Ball::collision(const Disc &disc) {
 	}
 
 	sf::Vector2f intersection = Ball::getIntersection(this->getPosition(), this->getPosition() + this->velocity, disc.getPosition(), disc.getPosition() + disc.getVelocity());
-	if (isnanf(intersection.x) || isnanf(intersection.y))
+	if (isnan(intersection.x) || isnan(intersection.y))
 		return false;
 	if (intersection.x < 0 || intersection.x > 800 || intersection.y < 0 || intersection.y > 600)
 		return false;
