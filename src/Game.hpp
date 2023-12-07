@@ -1,17 +1,17 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#define _USE_MATH_DEFINES
+#define USE_MATH_DEFINES
 #include <SFML/Graphics.hpp>
 #include "Ball.hpp"
 #include "Disc.hpp"
 #include <chrono>
 #include <thread>
 
-class Game {
+class Game final {
 	sf::RenderWindow window{ { 800u, 600u }, "simpleAirHockey", sf::Style::Close };
 	Ball ball;
-	Disc disc{ 30.0f, sf::Color::Green, window};
+	Disc disc{ 30.0f, sf::Color::Green, window };
 	sf::Clock clock;
 	void initializeWindow();
 	void handleWindowEvents();
@@ -35,7 +35,7 @@ void Game::initializeWindow() {
 	window.display();
 }
 void Game::handleWindowEvents() {
-	sf::Event event;
+	sf::Event event{};
 	while (window.pollEvent(event)) {
 		switch (event.type) {
 			case sf::Event::Closed:
