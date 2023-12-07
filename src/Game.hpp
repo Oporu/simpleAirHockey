@@ -1,7 +1,7 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#define USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <SFML/Graphics.hpp>
 #include "Ball.hpp"
 #include "Disc.hpp"
